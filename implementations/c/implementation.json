@@ -1,0 +1,52 @@
+{
+    "type": "implementation",
+    "short-name":"c",
+    "description":"C implementation",
+    "language":"c",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./pagerank.c" },
+    "runner-arguments": [
+        {
+            "prefix":"-n ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/nb-pages"
+            }
+        },
+        {
+            "prefix":"-i ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/nb-iterations"
+            }
+        },
+        {
+            "prefix":"-t ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/threshold"
+            }
+        },
+        {
+            "prefix":"-q ",
+            "value": { 
+                "expand": "/experiment/input-size",
+                "path": "/divisor"
+            }
+        }
+    ],
+    "libraries":[
+        { "file": "./common/common_rand.c"},
+        { "file": "./common/common.c"}
+    ],
+    "include-directories":[
+        { "file": "./common" }
+    ],
+    "dependencies": [
+        { 
+            "source": "https://github.com/Sable/ostrich-c-implementation-common.git",
+            "destination": { "file": "./common" }
+        }
+    ]
+}

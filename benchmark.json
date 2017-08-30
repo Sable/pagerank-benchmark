@@ -1,0 +1,33 @@
+{
+   "type": "benchmark",
+   "name":"PageRank",
+   "short-name":"pagerank",
+   "description":"PageRank is a link analysis algorithm used by Google Search and it assigns a numerical weighting to each element of a hyperlinked set of documents, such as the World Wide Web, with the purpose of 'measuring' its relative importance within the set. The algorithm may be applied to any collection of entities with reciprocal quotations and references.", 
+    "version":"0.1.0",
+    "input-size":{
+        "small": { 
+            "nb-pages": 500,
+            "nb-iterations": 200,
+            "threshold": 0.00000001,
+            "divisor": 100000
+        },
+        "medium": {
+            "nb-pages": 1000,
+            "nb-iterations": 200,
+            "threshold": 0.00000001,
+            "divisor": 100000
+        },
+        "large": {
+            "nb-pages": 5000,
+            "nb-iterations": 10,
+            "threshold": 0.00000001,
+            "divisor": 100000
+        }
+    },
+    "dwarf": "map-reduce",
+    "expected-output": {
+        "small": 12867,
+        "medium": 15065,
+        "large": 23965
+    }
+}

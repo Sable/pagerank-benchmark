@@ -1,0 +1,37 @@
+{
+    "type": "implementation",
+    "short-name":"js",
+    "description":"JavaScript implementation",
+    "language":"js",
+    "core-source-files":[
+    ],
+    "runner-source-file": { "file": "./pagerank.js" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-pages"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-iterations"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/threshold"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/divisor"
+        }
+    ],
+    "libraries":[
+        { "file": "./common/common_rand.js" },
+        { "file": "./common/fletcher_sum.js" }
+    ],
+    "dependencies": [
+        {
+            "source": "https://github.com/Sable/ostrich-js-implementation-common.git",
+            "destination": { "file": "./common" }
+        }
+    ]
+}
