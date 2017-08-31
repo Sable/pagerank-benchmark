@@ -1,0 +1,40 @@
+{
+    "type": "implementation",
+    "short-name":"matlab",
+    "description":"Matlab port of C implementation",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./pagerank.m"}
+    ],
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-pages"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/nb-iterations"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/threshold"
+        },
+        {
+            "expand": "/experiment/input-size",
+            "path": "/divisor"
+        }
+    ],
+    "libraries":[
+        { "file": "./common/fletcherSum.m" },
+        { "file": "./common/createRandomPageMatrices.m" },
+        { "file": "./common/commonRandom.m" },
+        { "file": "./common/setRandomSeed.m" }
+    ],
+    "dependencies": [
+        {
+            "source": "https://github.com/Sable/ostrich-matlab-implementation-common.git",
+            "destination": { "file": "./common" }
+        }
+    ]
+}
