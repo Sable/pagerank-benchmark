@@ -22,7 +22,7 @@ function random_pages(n, noutlinks, divisor){
             }
         }
 
-        // the case with no outlinks is afunctioned
+        // the case with no outlinks is avoided
         if(noutlinks[i] == 0){
             do { k = Math.abs(Math.commonRandom()) % n; } while ( k == i);
             pages[i*n + k] = 1;
